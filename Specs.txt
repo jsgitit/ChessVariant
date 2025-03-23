@@ -1,0 +1,113 @@
+Let's write the following application as outlined here:
+
+**I. Project Overview**  
+    A. **Title:** Variant Dynamic Chess Game MVP  
+    B. **Concept:**  
+        1. A chess variant that begins on a 4x4 board with a randomized piece setup.  
+        2. The board expands dynamically (up to an 8x8 grid) as the game progresses.  
+        3. Play is between a human and an AI opponent.
+
+---
+
+**II. Game Mechanics & Rules**
+
+    A. **Initial Board Setup**  
+        1. **Board Dimensions:**  
+            a. Starts as a 4x4 grid.  
+            b. White’s bottom-right square is white, maintaining standard orientation.  
+        2. **Piece Placement:**  
+            a. **Back Rank:** Each side has 4 pieces consisting of one mandatory King plus up to 3 random major/minor pieces.  
+            b. **Pawn Row:** A full row of pawns is placed immediately in front of the back rank.  
+            c. **Symmetry & Safety:** Both sides receive the same number and types of pieces, with the King shielded by pawns to ensure the game does not start in check.
+
+    B. **Movement & Board Expansion**  
+        1. **Standard Movement:**  
+            a. Moves follow standard chess rules (with the exception of castling and en passant, which are not permitted).  
+        2. **Board Expansion:**  
+            a. **Mechanism:** Each turn, a new square is added randomly around the periphery.  
+            b. **Progression:** The board expands from 4x4 to 6x6 and then to 8x8.  
+            c. **Movement into New Squares:** Pieces can move into a newly added square on the following turn if the square is empty.
+
+    C. **Game End Conditions**  
+        1. The game ends under standard chess conditions (checkmate, stalemate, or draw).
+
+---
+
+**III. AI Player Specifications**
+
+    A. **Performance:**  
+        1. The AI must perform at a level of at least 1000 ELO.
+
+    B. **Dynamic Adaptation:**  
+        1. The AI adapts to the expanding board and randomized piece setup dynamically.  
+        2. Both the AI and the human side experience the random piece assignment.
+
+    C. **Strategy:**  
+        1. Implement a minimax algorithm enhanced with alpha-beta pruning.  
+        2. Utilize a heuristic evaluation function based on material, positioning, and board control.
+
+---
+
+**IV. User Interface & Experience**
+
+    A. **Visual Design:**  
+        1. The board and pieces should visually resemble those on chess.com.  
+        2. Use open-license assets for the pieces.  
+        3. No animations are required.
+
+    B. **Interaction:**  
+        1. **Input Methods:**  
+            a. Support drag-and-drop for desktop play.  
+            b. Support touch interactions for mobile play.  
+        2. **Responsive Design:** The interface must be optimized for both cell phones and web browsers.  
+        3. **Board Orientation:** Adjust based on the human player’s selected color.
+
+    C. **Additional Features:**  
+        1. **Undo Functionality:**  
+            a. An undo button must revert both the human’s last move and the AI’s preceding move.  
+            b. After an undo, the AI should automatically make a new move.  
+        2. **Game Mode:** The MVP supports only human vs. AI play.
+
+---
+
+**V. Technical & Licensing Considerations**
+
+    A. **Technology Stack:**  
+        1. The game is developed using vanilla HTML, CSS, and JavaScript (no external libraries).
+
+    B. **Code Requirements:**  
+        1. All code must be completely original.
+
+    C. **Asset Licensing:**  
+        1. Chess piece assets must be sourced from open-license collections to avoid licensing costs.
+
+    D. **Offline Capability:**  
+        1. The game must run fully offline in a web browser.
+
+    E. **Data Persistence:**  
+        1. No save or load functionality is required.
+
+---
+
+**VI. Final MVP Must-Haves**
+
+    A. **Functional Requirements:**  
+        1. Randomized back rank with 4 pieces (including a King) and a full pawn row for both sides.  
+        2. Dynamic board expansion from 4x4 to 6x6 to 8x8 by adding random peripheral squares.  
+        3. Standard chess move validation (excluding castling and en passant).  
+        4. An AI opponent with a minimum of 1000 ELO using a minimax algorithm with alpha-beta pruning.  
+        5. A responsive UI that supports drag-and-drop and touch interactions, with board orientation based on the player's color.  
+        6. An undo button that reverses both the player's and the AI's last moves, triggering an immediate AI move afterward.
+
+    B. **Non-functional Requirements:**  
+        1. Code must be clean, maintainable, and scalable, adhering to KISS, DRY, YAGNI, and SOLID principles.  
+        2. Ensure full offline compatibility within the browser.  
+        3. The visual design should emulate chess.com aesthetics without additional animations or sound effects.
+
+---
+
+**VII. Next Steps**
+
+    A. **Development:** Proceed with the implementation based on these requirements.  
+    B. **Testing:** Validate the game rules, board expansion mechanics, and AI move logic during development.  
+    C. **Deployment:** Ensure offline capability and responsive design across both desktop and mobile devices.
